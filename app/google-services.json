@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "403232667484",
+    "firebase_url": "https://newamplus-default-rtdb.firebaseio.com",
+    "project_id": "newamplus",
+    "storage_bucket": "newamplus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403232667484:android:3d7afabe2fa7b519e43399",
+        "android_client_info": {
+          "package_name": "com.example.amplus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "403232667484-878mcll4purs5rglue4gq9h6b5ttefko.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYQVs7dH0TQK7P-xi5x4_SPKlsqCmJmYk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "403232667484-878mcll4purs5rglue4gq9h6b5ttefko.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:403232667484:android:5c0b281aaa751c25e43399",
+        "android_client_info": {
+          "package_name": "com.example.useramplus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "403232667484-878mcll4purs5rglue4gq9h6b5ttefko.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYQVs7dH0TQK7P-xi5x4_SPKlsqCmJmYk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "403232667484-878mcll4purs5rglue4gq9h6b5ttefko.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
