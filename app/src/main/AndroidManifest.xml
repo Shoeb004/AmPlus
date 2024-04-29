@@ -16,8 +16,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UserAmPlus"
         tools:targetApi="31">
-
-
+        <activity
+            android:name=".VideoCallActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConversationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InAppChatNextActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InAppActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserInfoVCActivity"
+            android:exported="false" />
         <activity
             android:name=".UserHomeActivity"
             android:exported="false"
@@ -33,6 +46,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyA3NP-hxZvXuCi7WfnGFYvkjlvpFMZnIpM" />

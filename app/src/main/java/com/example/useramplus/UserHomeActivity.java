@@ -3,6 +3,7 @@ package com.example.useramplus;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -159,6 +160,38 @@ public class UserHomeActivity extends AppCompatActivity {
                     .load(Common.currentUser.getAvatar())
                     .into(img_avatar);
         }
+
+        // Zego cloud
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                int id = item.getItemId();
+
+                if(id==R.id.video_menu){
+                    startActivity(new Intent(UserHomeActivity.this, VideoCallActivity.class));
+                }
+//                else if(id==R.id.chat_bot){
+//                    startActivity(new Intent(SideBarActivity.this,HomePage.class));
+//                }
+                else if(id==R.id.chat_with_us){
+                    startActivity(new Intent(UserHomeActivity.this,InAppActivity.class));
+                }
+
+                else if(id==R.id.share_menu){
+                    ApplicationInfo api = getApplicationContext().getApplicationInfo();
+                    Intent intent = new Intent(Intent.ACTION_SEND);
+                    String shareBody = "Here is the share content";
+                    intent.setType("text/plain");
+                    intent.putExtra(android.content.Intent.EXTRA_SUBJECT,"Try subject");
+                    intent.putExtra(android.content.Intent.EXTRA_TEXT,shareBody);
+                    startActivity(Intent.createChooser(intent, "ShareVia"));
+                }
+
+
+                return true;
+            }
+        });
     }
 
     @Override

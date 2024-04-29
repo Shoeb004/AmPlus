@@ -33,6 +33,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
 }
 
@@ -103,4 +104,19 @@ dependencies {
 
 //    v-20 2min watch
     implementation ("com.google.android.libraries.places:places:3.4.0")
+
+    // ZegoCloud
+
+    implementation("com.github.ZEGOCLOUD:zego_uikit_prebuilt_call_android:+")
+    implementation("com.github.ZEGOCLOUD:zego_inapp_chat_uikit_android:+")
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+
+
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation("com.github.ZEGOCLOUD:zego_inapp_chat_uikit_android:+")
+
+    //Material Library
+    implementation ("com.google.android.material:material:1.11.0")
+
 }
