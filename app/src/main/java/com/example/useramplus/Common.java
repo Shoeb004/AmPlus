@@ -1,5 +1,7 @@
 package com.example.useramplus;
 
+import android.widget.TextView;
+
 import androidx.appcompat.view.ActionBarPolicy;
 import androidx.appcompat.view.menu.MenuBuilder;
 
@@ -10,6 +12,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -38,6 +41,7 @@ public class Common {
     public static String buildName(String firstName, String lastName) {
         return new StringBuilder(firstName).append(" ").append(lastName).toString();
     }
+
 
 
 
@@ -94,4 +98,14 @@ public class Common {
 //            return (float) ((90 - Math.toDegrees(Math.atan(lng / lat))) + 270);
 //        return -1;
 //    }
+
+    public static void setWelcomeMessage(TextView textWelcome) {
+        int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+        if (hour >= 1 && hour <= 12)
+            textWelcome.setText(new StringBuilder("Good morning."));
+        else if (hour >= 13 && hour <= 17)
+            textWelcome.setText(new StringBuilder("Good afternoon."));
+        else
+            textWelcome.setText(new StringBuilder("Good evening."));
+    }
 }

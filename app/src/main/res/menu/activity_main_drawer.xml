@@ -3,15 +3,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
+
+    <!--    first menu-->
     <group android:checkableBehavior="single">
+        <item android:title="Services">
+
+        <menu>
+
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/baseline_home_work_24"
             android:title="@string/menu_home" />
-        <item
-            android:id="@+id/nav_sign_out"
-            android:icon="@drawable/baseline_fullscreen_exit_24"
-            android:title="@string/menu_sign_out" />
 
+        <item android:id="@+id/chat_with_us"
+            android:icon="@drawable/baseline_chat_bubble_24"
+            android:title="ChatWithUs" />
+
+        <item android:id="@+id/video_menu"
+            android:icon="@drawable/baseline_video_chat_24"
+            android:title="Video Call" />
+
+        <item android:id="@+id/chat_bot"
+            android:icon="@drawable/baseline_chat_24"
+            android:title="ChatBot" />
+        </menu>
+        </item>
     </group>
+
+    <!--    second menu-->
+    <group android:checkableBehavior="single">
+
+        <item android:title="Authentication">
+
+            <menu>
+                <item
+                    android:id="@+id/nav_sign_out"
+                    android:icon="@drawable/baseline_computer_24"
+                    android:title="@string/menu_sign_out" />
+
+            </menu>
+        </item>
+    </group>
+
+    <!--    third menu-->
+
+    <item android:title="Sharing">
+
+        <menu>
+            <item android:id="@+id/share_menu"
+                android:icon="@drawable/baseline_screen_share_24"
+                android:title="Share" />
+
+
+        </menu>
+    </item>
+
 </menu>

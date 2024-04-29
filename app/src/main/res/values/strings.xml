@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">UserAmPlus</string>
-    <string name="google_api_key">AIzaSyA3NP-AIzaSyA3NP-hxZvXuCi7WfnGFYvkjlvpFMZnIpM</string>
+    <string name="google_api_key">AIzaSyA3NP-hxZvXuCi7WfnGFYvkjlvpFMZnIpM</string>
     <string name="register_text">Let\'s start with creating your account</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
@@ -25,5 +25,8 @@
     <string name="driver_not_found">Drivers not found!</string>
     <string name="not_found_key">Driver not found with key!</string>
     <string name="welcome">Good aftrenoon</string>
+    <string name="chosse_a_saved_place">Chosse saved place</string>
+    <string name="where_to">Where to?\n</string>
+    <string name="city_name_empty">City name is empty</string>
 
 </resources>

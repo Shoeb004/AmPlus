@@ -72,7 +72,7 @@ dependencies {
     //Location
     implementation("com.google.android.gms:play-services-location:21.2.0")
 
-    //Ciclr image
+    //Circle image
     implementation("de.hdodenhof:circleimageview:3.1.0")
 
     //Firebase storage
@@ -97,10 +97,10 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.6.1")
 
     //Sliding up
-//    implementation("com.sothree.slidinguppanel:library:3.4.0’")
+    implementation("com.sothree.slidinguppanel:library:3.3.1")
 
     //Google places
 
 //    v-20 2min watch
-//    implementation ("com.google.android.libraries.places:places:3.4.0")
+    implementation ("com.google.android.libraries.places:places:3.4.0")
 }
