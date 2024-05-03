@@ -42,6 +42,27 @@ import com.google.firebase.storage.UploadTask;
 
 import java.util.HashMap;
 import java.util.Map;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import android.annotation.SuppressLint;
+import android.content.ClipData;
+import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.navigation.NavigationView;
+
+import java.io.File;
 
 public class UserHomeActivity extends AppCompatActivity {
 
@@ -177,6 +198,9 @@ public class UserHomeActivity extends AppCompatActivity {
                 else if(id==R.id.chat_with_us){
                     startActivity(new Intent(UserHomeActivity.this,InAppActivity.class));
                 }
+                else if(id==R.id.nav_sign_out){
+                    signOutFunction();
+                }
 
                 else if(id==R.id.share_menu){
                     ApplicationInfo api = getApplicationContext().getApplicationInfo();
@@ -206,6 +230,44 @@ public class UserHomeActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_user_home);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+    void signOutFunction(){
+
+//                startActivity(new Intent(UserHomeActivity.this,SplashScreenActivity.class));
+        AlertDialog.Builder builder = new AlertDialog.Builder(UserHomeActivity.this);
+        builder.setTitle("Sign out");
+        builder.setMessage("Do you really want to sign out");
+        builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int which) {
+                dialogInterface.dismiss();
+            }
+        }).setPositiveButton("SIGN OUT", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(UserHomeActivity.this, SplashScreenActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
+
+            }
+        }).setCancelable(false);
+
+        AlertDialog dialog = builder.create();
+        dialog.setOnShowListener(new DialogInterface.OnShowListener() {
+            @Override
+            public void onShow(DialogInterface dialogInterface) {
+                dialog.getButton(AlertDialog.BUTTON_POSITIVE)
+                        .setTextColor(ContextCompat.getColor(UserHomeActivity.this,android.R.color.holo_red_dark));
+
+                dialog.getButton(AlertDialog.BUTTON_NEGATIVE)
+                        .setTextColor(ContextCompat.getColor(UserHomeActivity.this,R.color.colorAccent));
+
+            }
+        });
+
+        dialog.show();
     }
 
     @Override
